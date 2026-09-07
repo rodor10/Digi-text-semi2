@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Special Elite', cursive;
 }
 
 .cover {
@@ -26,20 +26,27 @@ body {
   position: relative;
   z-index: 1;
   text-align: left;
-  color: white;
+  color: #f8f2df;
   max-width: 600px;
   padding: 20px;
   transform: rotate(11deg);
+  font-family: 'Special Elite', cursive;
 }
 
 .cover-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 3.5rem;
+  line-height: 0.95;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.45);
 }
 
 .cover-content p {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
 }
 
 .btn {
@@ -50,6 +57,7 @@ body {
   padding: 12px 24px;
   border-radius: 25px;
   font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
 .slide1 {
