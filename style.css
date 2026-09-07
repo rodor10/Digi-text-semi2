@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 120px;
+  background-image: url(Images/book.Photo.jpg);
+  height: 750px;
+  background-size: cover;
+  background-position: center;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  color: white;
+  max-width: 600px;
+  padding: 20px;
+  transform: rotate(11deg);
+}
+
+.cover-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.cover-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #111;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.slide1 {
+	background-color: #465602;
+	padding: 20px;
+    height: 600px;
+}
+
+.slide2 {
+	background-color: #E62A23;
+	padding: 20px;
+    height: 600px;
+}
+
+.slide3 {
+	background-color: greenyellow;
+	padding: 20px;
+    height: 600px;
+}
