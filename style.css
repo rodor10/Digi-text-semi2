@@ -1,6 +1,58 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Special Elite', cursive;
+  overflow-x: hidden;
+}
+
+.top-banner {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: #1d1d1d;
+  color: #f8f2df;
+  padding: 14px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.top-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #f8f2df;
+  color: #1d1d1d;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  background: #d9cfa5;
 }
 
 .cover {
@@ -9,17 +61,19 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding-left: 120px;
-  background-image: url(Images/book.Photo.jpg);
   height: 750px;
+  overflow: hidden;
+  background-image: url(Images/book.Photo.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .cover::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.38);
 }
 
 .cover-content {
@@ -29,8 +83,10 @@ body {
   color: #f8f2df;
   max-width: 600px;
   padding: 20px;
-  transform: rotate(11deg);
+  transform: rotate(11deg) translateY(10px);
   font-family: 'Special Elite', cursive;
+  will-change: transform;
+  transition: transform 0.1s linear;
 }
 
 .cover-content h1 {
