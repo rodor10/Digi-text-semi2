@@ -13,8 +13,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 20;
-  background-color: #1d1d1d;
-  color: #f8f2df;
+  background-color: #000000;
+  color: #fefefec4;
   padding: 14px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -43,17 +43,25 @@ body {
 .button {
   display: inline-block;
   padding: 8px 14px;
-  background: #f8f2df;
-  color: #1d1d1d;
+  background: #51e927;
+  color: #0c0c0c;
   text-decoration: none;
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: bold;
-  transition: 0.2s ease;
+  box-shadow: 0 3px 0 #858984, 0 5px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
 }
 
 .button:hover {
   background: #d9cfa5;
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #b7c0b6, 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #39ff14, 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 .cover {
@@ -96,7 +104,7 @@ body {
   margin-bottom: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #131313;
+  color: #bdbdbd;
   letter-spacing: .15em;
   text-shadow: 
     1px -1px 0 #767676,
@@ -111,7 +119,10 @@ body {
   font-size: 1.15rem;
   margin-bottom: 20px;
   letter-spacing: 1px;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
+  color: #d0d0d0;
+  text-shadow: 
+    1px -1px 0 #767676,
+    -1px 2px 0 #737272;
 }
 
 .btn {
@@ -128,17 +139,348 @@ body {
 .slide1 {
 	background-color: #465602;
 	padding: 20px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.genre-section-title {
+    margin: 0;
+    color: #f8f2df;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    text-align: center;
+}
+
+.book-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 52px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    position: relative;
+    width: min(26vw, 260px);
+    min-width: 180px;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    flex: 0 0 auto;
+}
+
+.book-card:first-child,
+.book-card:last-child {
+    width: min(30vw, 300px);
+    height: 470px;
+}
+
+.featured-card {
+    width: min(28vw, 280px);
+    height: 500px;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 28px rgba(0, 0, 0, 0.3);
+}
+
+.book-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.book-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.book-card:hover .book-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.book-overlay h3,
+.book-overlay p {
+    margin: 0 0 10px;
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(0) rotate(0deg);
+}
+
+.book-card:hover .book-overlay h3 {
+    animation: scrambleInLeft 1s ease forwards;
+}
+
+.book-card:hover .book-overlay p {
+    animation: scrambleInRight 1s ease forwards;
+    animation-delay: 0.15s;
+}
+
+@keyframes scrambleInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-80px) rotate(-14deg) scale(0.9);
+        filter: blur(3px);
+    }
+    35% {
+        opacity: 0.7;
+        transform: translateX(20px) rotate(5deg) scale(1.02);
+        filter: blur(1px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes scrambleInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(80px) rotate(14deg) scale(0.9);
+        filter: blur(3px);
+    }
+    35% {
+        opacity: 0.7;
+        transform: translateX(-20px) rotate(-5deg) scale(1.02);
+        filter: blur(1px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg) scale(1);
+        filter: blur(0);
+    }
+}
+
+.slide2,
+.slide3 {
+    background-color: #465602;
+    padding: 20px;
     height: 600px;
+}
+
+.slide1,
+.slide2,
+.slide3,
+.slide4 {
+    font-family: Arial, sans-serif;
+}
+
+.genre-section-title,
+.history-section h2,
+.book-picks h2 {
+    font-family: 'Special Elite', cursive;
 }
 
 .slide2 {
-	background-color: #E62A23;
-	padding: 20px;
-    height: 600px;
+    box-sizing: border-box;
+    min-height: 600px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide3 {
-	background-color: greenyellow;
-	padding: 20px;
-    height: 600px;
+    box-sizing: border-box;
+    min-height: 600px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.literacy-layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.5fr);
+    align-items: center;
+    gap: 32px;
+    width: min(100%, 1200px);
+}
+
+.literacy-image {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.literacy-layout .history-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.history-section {
+    width: min(100%, 1100px);
+    color: #f8f2df;
+}
+
+.history-section h2 {
+    margin: 0 0 12px;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    text-align: center;
+}
+
+.history-intro {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.history-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.history-milestone {
+    padding: 20px;
+    border-top: 4px solid #51e927;
+    background: rgba(0, 0, 0, 0.22);
+    line-height: 1.5;
+}
+
+.history-milestone h3 {
+    margin: 0 0 10px;
+    color: #d9cfa5;
+    font-size: 1.1rem;
+}
+
+.history-milestone p {
+    margin: 0;
+}
+
+.slide4 {
+    box-sizing: border-box;
+    min-height: 600px;
+    padding: 40px 20px;
+    background-color: #465602;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-picks {
+    width: min(100%, 1100px);
+    color: #f8f2df;
+}
+
+.book-picks h2 {
+    margin: 0 0 12px;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    text-align: center;
+}
+
+.book-picks-intro {
+    margin: 0 auto 28px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.genre-card {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.8fr) 1.2fr;
+    overflow: hidden;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.28);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.genre-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 210px;
+    object-fit: cover;
+}
+
+.genre-card-content {
+    padding: 20px;
+}
+
+.genre-card h3 {
+    margin: 0 0 12px;
+    color: #d9cfa5;
+    font-size: 1.2rem;
+}
+
+.genre-card ul {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.genre-card li {
+    display: grid;
+    gap: 4px;
+    line-height: 1.4;
+}
+
+.genre-card li span {
+    color: #d0d0d0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+    .history-timeline,
+    .genre-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .literacy-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .literacy-image {
+        height: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .history-timeline,
+    .genre-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .genre-card {
+        grid-template-columns: minmax(100px, 0.7fr) 1.3fr;
+    }
+
+    .genre-card img {
+        min-height: 190px;
+    }
+
+    .genre-card-content {
+        padding: 16px;
+    }
 }
