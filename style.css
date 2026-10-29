@@ -2,6 +2,13 @@ html {
   scroll-behavior: smooth;
 }
 
+#section1,
+#section2,
+#section3,
+#section4 {
+  scroll-margin-top: 110px;
+}
+
 body {
   margin: 0;
   font-family: 'Special Elite', cursive;
@@ -448,6 +455,22 @@ body {
 .genre-card li span {
     color: #d0d0d0;
     font-size: 0.9rem;
+}
+
+.site-footer {
+    padding: 18px 20px;
+    background-color: #000000;
+    color: #f8f2df;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer a {
+    color: #51e927;
 }
 
 @media (max-width: 760px) {
