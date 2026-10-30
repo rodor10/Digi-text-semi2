@@ -41,10 +41,17 @@ body {
 }
 
 .button-container {
+  margin-left: auto;
+}
+
+.button-container ul {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .button {
@@ -79,7 +86,7 @@ body {
   padding-left: 120px;
   height: 750px;
   overflow: hidden;
-  background-image: url(Images/book.Photo.jpg);
+  background-image: url(Images/bookPhoto.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
