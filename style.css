@@ -1,3 +1,4 @@
+/* Enable smooth scrolling and keep section headings clear of the sticky navigation. */
 html {
   scroll-behavior: smooth;
 }
@@ -16,6 +17,7 @@ body {
 }
 
 
+/* Style the sticky navigation bar and its link buttons. */
 .top-nav {
   position: sticky;
   top: 0;
@@ -78,6 +80,7 @@ body {
   box-shadow: 0 0 0 #39ff14, 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
+/* Create the cover image area and layer readable title text over it. */
 .cover {
   position: relative;
   display: flex;
@@ -150,6 +153,7 @@ body {
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
+/* Lay out the first slide and its interactive genre cards. */
 .slide1 {
 	background-color: #465602;
 	padding: 20px;
@@ -200,6 +204,7 @@ body {
     height: 500px;
 }
 
+/* Reveal card descriptions with animated text when a card is hovered. */
 .book-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 18px 28px rgba(0, 0, 0, 0.3);
@@ -287,6 +292,7 @@ body {
     }
 }
 
+/* Set the shared background, text, and heading fonts for the content slides. */
 .slide2,
 .slide3 {
     background-color: #465602;
@@ -325,6 +331,7 @@ body {
     justify-content: center;
 }
 
+/* Position the literacy image beside its history timeline. */
 .literacy-layout {
     display: grid;
     grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.5fr);
@@ -345,6 +352,7 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* Style the shared history headings, introductions, and timeline cards. */
 .history-section {
     width: min(100%, 1100px);
     color: #f8f2df;
@@ -386,6 +394,7 @@ body {
     margin: 0;
 }
 
+/* Arrange reader-favorite books into genre cards. */
 .slide4 {
     box-sizing: border-box;
     min-height: 600px;
@@ -464,6 +473,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* Style the image-source credit at the bottom of the page. */
 .site-footer {
     padding: 18px 20px;
     background-color: #000000;
@@ -480,6 +490,7 @@ body {
     color: #51e927;
 }
 
+/* Adjust timeline and recommendation layouts for tablet and mobile screens. */
 @media (max-width: 760px) {
     .history-timeline,
     .genre-grid {
